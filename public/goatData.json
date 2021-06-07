@@ -1,0 +1,37 @@
+{
+    "Anglo-Nubian Goat": {
+        "price": 5,
+        "description": "The Anglo-Nubian goat is a large goat with a Roman nose and pendulous ears that hang low and close to the head. Anglo-Nubian goats are most often black, red, or tan. They are multi-purpose animals bred for milk, meat, and hides. They don’t produce an especially large volume of milk, but their milk is higher in butterfat and more flavorful than that of other breeds.",
+        "imageSource": "anglo-nubian.png"
+    },
+    "Boer Goat": {
+        "price": 2,
+        "description": "The Boer breed is characterized by a red head and red on at least a portion of the neck, with a white body. They have large pendulous ears. Boer goats are in high demand because they grow fast, making them desirable in the meat indsutry.",
+        "imageSource": "boer.png"
+    },
+    "Saanen Goat": {
+        "price": 2,
+        "description": "The Saanen is a delicate-looking goat with a lean body type. They are leggier than most meat breeds of goat which is good for ease-of-milking. Unlike some goat breeds, their hair is soft, short, and smooth and comes in two colors: white and light cream.",
+        "imageSource": "saanen.png"
+    },
+    "Nigerian Dwarf Goat": {
+        "price": 2,
+        "description": "The Nigerian Dwarf goat is a miniature goat from West Africa. Their coats come in many colors, including gold, black, chocolate, and even Dalmation-spotted. They are raised for both milk production and as pets.",
+        "imageSource": "nigerian-dwarf.png"
+    },
+    "Alpine Goat": {
+        "price": 2,
+        "description": "The French-Alpine is variable in size, and can have varying coat colors, including pure white, gray, brown red and black. They are often used for commercial dairy production.",
+        "imageSource": "alpine.png"
+    },
+    "American Pygmy Goat": {
+        "price": 2,
+        "description": "The American Pygmy goat comes in three different colors: Caramel, Agouti, and Black. A full grown American Pygmy goat is roughly the same size as a medium adult dog.",
+        "imageSource": "american-pygmy.png"
+    },
+    "Fainting Goat": {
+        "price": 2,
+        "description": "Despite their name, fainting goats don't actually faint! When startled or excited, their muscles stay tense causing them to stiffen or fall over, though they never lose conciousness.",
+        "imageSource": "fainting.png"
+    }
+}
