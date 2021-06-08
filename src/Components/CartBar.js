@@ -14,9 +14,11 @@ class CartBar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            cart: getCart()
+            cart: getCart(),
+            extended: true
         }
         this.onCartChanged = this.onCartChanged.bind(this);
+        this.toggle = this.toggle.bind(this);
         addCartListener(this.onCartChanged);
     }
 
@@ -27,18 +29,31 @@ class CartBar extends Component {
         });
     }
 
+    toggle() {
+        const extended = !this.state.extended;
+        this.setState({
+            extended
+        });
+    }
+
     render() {
-        const {cart} = this.state;
-        return <div className='cart-bar'>
-            Your cart:
-            {
-                Object.keys(cart).map((item, index) => {
-                    console.log(item);
-                    return <CartItem itemName={item} quantity={cart[item].quantity} price={cart[item].price} key={index}/>
-                })
-            }
-            <a href='/checkout'>Checkout</a>
-        </div>;
+        const {cart, extended} = this.state;
+        const cartItems = Object.keys(cart).map((item, index) => {
+            console.log(item);
+            return <CartItem itemName={item} quantity={cart[item].quantity} price={cart[item].price} key={index}/>
+        });
+        if (extended) {
+            return <div className='cart-bar'>
+                Your cart:
+                {
+                    cartItems.length ? cartItems : <p>Your cart is empty.</p>
+                }
+                <a href='/checkout'>Checkout</a>
+            </div>;
+        } else {
+            return null;
+        }
+        
     }
 }
 

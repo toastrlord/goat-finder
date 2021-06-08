@@ -49,6 +49,7 @@ code {
   padding-bottom: 8px;
   margin: 12px;
   border: solid 2px black;
+  flex: 1;
 }
 
 .goat-image {
@@ -61,5 +62,5 @@ code {
   margin-bottom: 0;
   padding-left: 16px;
   padding-right: 16px;
-  flex-grow: 1.2;
+  font-weight: bold;
 }

@@ -4,6 +4,7 @@ import ShopPage from './Components/ShopPage';
 import ShopItem from './Components/ShopItem';
 import HomePage from './Components/HomePage';
 import AboutPage from './Components/AboutPage';
+import CheckoutPage from './Components/CheckoutPage';
 import CartBar from './Components/CartBar';
 import goats from '.';
 
@@ -17,8 +18,7 @@ const Routes = () => {
             <a href='/home'>
                 <img src={'images/goatfinder_logo_smaller.png'} alt='goat finder logo' className='logo'/>
             </a>
-            <div style={{display: 'flex'}}>
-                <div style={{flex: 4}}>
+                <div style={{display: 'flex', justifyContent: 'center', textAlign: 'center'}}>
                     <Switch style={{flex: 4}}>
                         <Route exact path='/'> 
                             <Redirect to='/home' />
@@ -26,7 +26,7 @@ const Routes = () => {
                         <Route exact path='/home' component={HomePage} />
                         <Route exact path='/about' component={AboutPage} />
                         <Route exact path='/shop' component={ShopPage} />
-                        <Route exact path='/checkout' />
+                        <Route exact path='/checkout' component={CheckoutPage}/>
                         {
                             Object.keys(goats).map((goatName, index) => {
                                 const goatLink = goatNameToLink(goatName);
@@ -37,8 +37,7 @@ const Routes = () => {
                         }
                     </Switch>
                 </div>
-                <CartBar/>
-            </div>
+            <CartBar/>
         </BrowserRouter>
     );
 };
