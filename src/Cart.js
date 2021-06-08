@@ -1,4 +1,5 @@
-const cart = {};
+const cartString = localStorage.getItem('cart');
+const cart = cartString === null ? {} : JSON.parse(cartString);
 const onCartChangedListeners = [];
 
 function addItems(itemInfo, quantity) {
@@ -32,6 +33,7 @@ function addCartListener(callback) {
 }
 
 function onCartChanged() {
+    localStorage.setItem('cart', JSON.stringify(cart));
     onCartChangedListeners.forEach(cb => cb());
 }
 

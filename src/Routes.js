@@ -17,23 +17,28 @@ const Routes = () => {
             <a href='/home'>
                 <img src={'images/goatfinder_logo_smaller.png'} alt='goat finder logo' className='logo'/>
             </a>
-            <CartBar />
-            <Switch>
-                <Route exact path='/'> 
-                    <Redirect to='/home' />
-                </Route>
-                <Route exact path='/home' component={HomePage} />
-                <Route exact path='/about' component={AboutPage} />
-                <Route exact path='/shop' component={ShopPage} />
-                {
-                    Object.keys(goats).map((goatName, index) => {
-                        const goatLink = goatNameToLink(goatName);
-                        return <Route exact path={goatLink} key={index}>
-                            <ShopItem itemName={goatName} goatInfo={goats[goatName]} />
+            <div style={{display: 'flex'}}>
+                <div style={{flex: 4}}>
+                    <Switch style={{flex: 4}}>
+                        <Route exact path='/'> 
+                            <Redirect to='/home' />
                         </Route>
-                    })
-                }
-            </Switch>
+                        <Route exact path='/home' component={HomePage} />
+                        <Route exact path='/about' component={AboutPage} />
+                        <Route exact path='/shop' component={ShopPage} />
+                        <Route exact path='/checkout' />
+                        {
+                            Object.keys(goats).map((goatName, index) => {
+                                const goatLink = goatNameToLink(goatName);
+                                return <Route exact path={goatLink} key={index}>
+                                    <ShopItem itemName={goatName} goatInfo={goats[goatName]} />
+                                </Route>
+                            })
+                        }
+                    </Switch>
+                </div>
+                <CartBar/>
+            </div>
         </BrowserRouter>
     );
 };

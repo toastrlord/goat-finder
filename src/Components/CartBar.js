@@ -29,13 +29,15 @@ class CartBar extends Component {
 
     render() {
         const {cart} = this.state;
-        return <div style={{display: 'flex'}}>
+        return <div className='cart-bar'>
+            Your cart:
             {
                 Object.keys(cart).map((item, index) => {
                     console.log(item);
                     return <CartItem itemName={item} quantity={cart[item].quantity} price={cart[item].price} key={index}/>
                 })
             }
+            <a href='/checkout'>Checkout</a>
         </div>;
     }
 }

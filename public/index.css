@@ -18,6 +18,12 @@ code {
     monospace;
 }
 
+.cart-bar {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
 .logo {
   display: block;
   margin-left: auto;
@@ -55,4 +61,5 @@ code {
   margin-bottom: 0;
   padding-left: 16px;
   padding-right: 16px;
+  flex-grow: 1.2;
 }
