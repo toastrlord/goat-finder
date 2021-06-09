@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { HashRouter, Switch, Route, Redirect, Link } from 'react-router-dom';
 import ShopPage from './Components/ShopPage';
 import ShopItem from './Components/ShopItem';
 import HomePage from './Components/HomePage';
@@ -14,10 +14,10 @@ function goatNameToLink(goatName) {
 
 const Routes = () => {
     return (
-        <BrowserRouter>
-            <a href='/home'>
+        <HashRouter basename={process.env.PUBLIC_URL}>
+            <Link to='/home'>
                 <img src={'images/goatfinder_logo_smaller.png'} alt='goat finder logo' className='logo'/>
-            </a>
+            </Link>
                 <div style={{display: 'flex', justifyContent: 'center', textAlign: 'center'}}>
                     <Switch style={{flex: 4}}>
                         <Route exact path='/'> 
@@ -38,7 +38,7 @@ const Routes = () => {
                     </Switch>
                 </div>
             <CartBar/>
-        </BrowserRouter>
+        </HashRouter>
     );
 };
 
