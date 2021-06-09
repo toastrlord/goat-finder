@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 import { getCart } from '../Cart';
-import {goatNameToLink} from '../Routes';
 
 function CheckoutItem(props) {
     const {itemName, quantity, price, imageSource} = props;
     return (
         <div style={{display: 'flex', flexDirection: 'row'}}>
-            <img src={'images/' + imageSource} />
+            <img src={'images/' + imageSource} alt={itemName}/>
             <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
                 <p>{itemName}</p>
                 <p>Quantity: {quantity}</p>
