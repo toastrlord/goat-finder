@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { addCartListener, clearItem, getCart } from '../Cart';
+import {Link} from 'react-router-dom';
 
 function CartItem(props) {
     return <div>
@@ -48,7 +49,7 @@ class CartBar extends Component {
                 {
                     cartItems.length ? cartItems : <p>Your cart is empty.</p>
                 }
-                <a href='/checkout'>Checkout</a>
+                <Link to='/checkout'>Checkout</Link>
             </div>;
         } else {
             return null;

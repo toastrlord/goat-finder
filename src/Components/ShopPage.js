@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import ShopItem from './ShopItem';
 import goats from '../index';
 import ItemThumbnail from './ItemThumbnail';
 
