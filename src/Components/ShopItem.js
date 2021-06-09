@@ -11,8 +11,8 @@ class ShopItem extends Component {
         const {itemName, goatInfo} = this.props;
         const {price, description, imageSource} = goatInfo;
         return <div className='shop-item'>
+            <h1>{itemName}</h1>
             <img src={process.env.PUBLIC_URL + '/images/' + imageSource} alt={itemName} className='goat-image'/>
-            <p>{itemName}</p>
             <p>Price: ${price}</p>
             <p>{description}</p>
             <input htmlFor='quantity' type='number' min='1' step='1' defaultValue='1' ref={this.quantityRef}/>

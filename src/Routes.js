@@ -2,13 +2,14 @@ import React from 'react';
 import { HashRouter, Switch, Route, Redirect, Link } from 'react-router-dom';
 import ShopPage from './Components/ShopPage';
 import ShopItem from './Components/ShopItem';
+import NavBar from './Components/NavBar';
 import CheckoutPage from './Components/CheckoutPage';
 import CartBar from './Components/CartBar';
 import goats from '.';
 import AboutPage from './Components/AboutPage';
 
 function goatNameToLink(goatName) {
-    return '/'.concat(goatName.replace(' ', '_'));
+    return '/shop/'.concat(goatName.replace(' ', '_'));
 }
 
 const Routes = () => {
@@ -17,6 +18,7 @@ const Routes = () => {
             <Link to='/shop'>
                 <img src={process.env.PUBLIC_URL + '/images/goatfinder_logo_smaller.png'} alt='goat finder logo' className='logo'/>
             </Link>
+                <NavBar />
                 <div style={{display: 'flex', justifyContent: 'center', textAlign: 'center'}}>
                     <Switch style={{flex: 4}}>
                         <Route exact path='/'> 

@@ -28,6 +28,7 @@ class CheckoutPage extends Component {
         const {cart} = this.state;
         let total = 0;
         return <div>
+            <h1>Checkout</h1>
             {
                 Object.keys(cart).map((itemName, index) => {
                     total += cart[itemName].quantity * cart[itemName].price;
