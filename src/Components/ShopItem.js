@@ -17,7 +17,6 @@ class ShopItem extends Component {
             <p>{description}</p>
             <input htmlFor='quantity' type='number' min='1' step='1' defaultValue='1' ref={this.quantityRef}/>
             <button onClick={() => addItems({price, description, imageSource, name: itemName}, this.quantityRef.current.value)}>Add to Cart</button>
-            <Link to='/shop'>Back to store</Link>
         </div>;
     }
 }

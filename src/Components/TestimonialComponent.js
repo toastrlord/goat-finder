@@ -1,7 +1,7 @@
 function TestimonialComponent(props) {
-    return <div>
-        <p>"{props.quote}"</p>
-        <p>-{props.author}</p>
+    return <div className='customer-testimonial'>
+        <p className='customer-quote'>"{props.quote}"</p>
+        <p className='customer-name'>-{props.author}</p>
     </div>
 }
 

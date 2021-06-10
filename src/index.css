@@ -74,10 +74,40 @@ code {
   border: solid black 2px;
   transition: all 500ms;
   margin: 16px;
+  font-size: 22px;
 }
 
 .navbar-element:hover {
   background-color: white;
   font-weight: bold;
   transform: scale(1.2);
+}
+
+.customer-testimonial {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 30%;
+  margin-right: 30%;
+  text-align: start;
+  margin-bottom: 10px;
+}
+
+.customer-name {
+  margin-top: 2px;
+  font-weight: bold;
+}
+
+.customer-quote {
+  background-color: rgb(97, 97, 97);
+  color: rgb(175, 175, 175);
+  padding: 16px;
+  border-radius: 8px;
+  text-shadow: 1px 1px black;
+  font-style: italic;
+}
+
+#main-display {
+  margin-left: 120px;
+  margin-right: 120px;
 }
