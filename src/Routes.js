@@ -4,7 +4,6 @@ import ShopPage from './Components/ShopPage';
 import ShopItem from './Components/ShopItem';
 import NavBar from './Components/NavBar';
 import CheckoutPage from './Components/CheckoutPage';
-import CartBar from './Components/CartBar';
 import goats from '.';
 import AboutPage from './Components/AboutPage';
 
@@ -38,7 +37,6 @@ const Routes = () => {
                             }
                         </Switch>
                     </div>
-                <CartBar/>
             </HashRouter>
         </div>
     );

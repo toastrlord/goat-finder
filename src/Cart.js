@@ -14,6 +14,15 @@ function addItems(itemInfo, quantity) {
     }
 }
 
+function getTotalCartItems() {
+    let total = 0;
+    Object.keys(cart).forEach(itemName => {
+        total += cart[itemName].quantity;
+    });
+
+    return total;
+}
+
 function updateItem(itemName, newQuantity) {
     if (!isNaN(Number(newQuantity)) && Number(newQuantity) > 0)
     cart[itemName].quantity = Number(newQuantity);
@@ -45,4 +54,4 @@ function onCartChanged() {
     onCartChangedListeners.forEach(cb => cb());
 }
 
-export {addItems, clearCart, getCart, clearItem, updateItem, addCartListener, onCartChanged};
+export {addItems, clearCart, getCart, clearItem, updateItem, getTotalCartItems, addCartListener, onCartChanged};
