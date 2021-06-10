@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { addItems } from '../Cart';
-import { Link } from 'react-router-dom';
 
 class ShopItem extends Component {
     constructor(props) {
@@ -13,9 +12,18 @@ class ShopItem extends Component {
         return <div className='shop-item'>
             <h1>{itemName}</h1>
             <img src={process.env.PUBLIC_URL + '/images/' + imageSource} alt={itemName} className='goat-image'/>
-            <p>Price: ${price}</p>
             <p>{description}</p>
-            <input htmlFor='quantity' type='number' min='1' step='1' defaultValue='1' ref={this.quantityRef}/>
+            <p>Price: ${price}</p>
+            <input htmlFor='quantity' type='number' min='1' step='1' defaultValue='1' ref={this.quantityRef}
+                onKeyDown={(e) => {
+                        if ((Number(e.key) >= 0 && Number(e.key) <= 9) || e.key === 'Backspace' || e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                            return true;
+                        } else {
+                            e.preventDefault();
+                            return false;
+                        }
+                }}
+            />
             <button onClick={() => addItems({price, description, imageSource, name: itemName}, this.quantityRef.current.value)}>Add to Cart</button>
         </div>;
     }

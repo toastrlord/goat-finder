@@ -3,12 +3,20 @@ const cart = cartString === null ? {} : JSON.parse(cartString);
 const onCartChangedListeners = [];
 
 function addItems(itemInfo, quantity) {
-    if (cart[itemInfo.name]) {
-        cart[itemInfo.name].quantity += Number(quantity);
-    } else {
-        cart[itemInfo.name] = itemInfo;
-        cart[itemInfo.name].quantity = Number(quantity);
+    if (!isNaN(Number(quantity)) && Number(quantity) > 0) {
+        if (cart[itemInfo.name]) {
+            cart[itemInfo.name].quantity += Number(quantity);
+        } else {
+            cart[itemInfo.name] = itemInfo;
+            cart[itemInfo.name].quantity = Number(quantity);
+        }
+        onCartChanged();
     }
+}
+
+function updateItem(itemName, newQuantity) {
+    if (!isNaN(Number(newQuantity)) && Number(newQuantity) > 0)
+    cart[itemName].quantity = Number(newQuantity);
     onCartChanged();
 }
 
@@ -37,4 +45,4 @@ function onCartChanged() {
     onCartChangedListeners.forEach(cb => cb());
 }
 
-export {addItems, clearCart, getCart, clearItem, addCartListener, onCartChanged};
+export {addItems, clearCart, getCart, clearItem, updateItem, addCartListener, onCartChanged};

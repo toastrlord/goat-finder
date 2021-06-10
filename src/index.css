@@ -22,6 +22,7 @@ code {
   display: flex;
   flex-direction: column;
   flex: 1;
+  position: absolute;
 }
 
 .logo {
@@ -103,8 +104,14 @@ code {
   color: rgb(175, 175, 175);
   padding: 16px;
   border-radius: 8px;
-  text-shadow: 1px 1px black;
+  text-shadow: 2px 2px black;
   font-style: italic;
+  font-weight: bold;
+}
+
+.shop-item {
+  margin-left: 30%;
+  margin-right: 30%;
 }
 
 #main-display {

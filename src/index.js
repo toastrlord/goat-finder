@@ -7,7 +7,6 @@ const goats = {};
 
 async function loadJson(path) {
   const data = await fetch(path);
-  console.log(data);
   const json = await data.json();
   return json;
 }
