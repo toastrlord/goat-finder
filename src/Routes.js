@@ -13,7 +13,7 @@ function goatNameToLink(goatName) {
 
 const Routes = () => {
     return (
-        <div id='main-display'>
+        <div>
             <HashRouter basename={process.env.PUBLIC_URL}>
                 <div id='top-bar'>
                     <Link to='/shop'>
@@ -21,23 +21,25 @@ const Routes = () => {
                     </Link>
                     <NavBar />
                 </div>
-                <div id='page-content' style={{display: 'flex', justifyContent: 'center', textAlign: 'center'}}>
-                    <Switch style={{flex: 4}}>
-                        <Route exact path='/'> 
-                            <Redirect to='/shop' />
-                        </Route>
-                        <Route exact path='/about' component={AboutPage} />
-                        <Route exact path='/shop' component={ShopPage} />
-                        <Route exact path='/checkout' component={CheckoutPage}/>
-                        {
-                            Object.keys(goats).map((goatName, index) => {
-                                const goatLink = goatNameToLink(goatName);
-                                return <Route exact path={goatLink} key={index}>
-                                    <ShopItem itemName={goatName} goatInfo={goats[goatName]} />
-                                </Route>
-                            })
-                        }
-                    </Switch>
+                <div id='main-display'>
+                    <div id='page-content' style={{display: 'flex', justifyContent: 'center', textAlign: 'center'}}>
+                        <Switch style={{flex: 4}}>
+                            <Route exact path='/'> 
+                                <Redirect to='/shop' />
+                            </Route>
+                            <Route exact path='/about' component={AboutPage} />
+                            <Route exact path='/shop' component={ShopPage} />
+                            <Route exact path='/checkout' component={CheckoutPage}/>
+                            {
+                                Object.keys(goats).map((goatName, index) => {
+                                    const goatLink = goatNameToLink(goatName);
+                                    return <Route exact path={goatLink} key={index}>
+                                        <ShopItem itemName={goatName} goatInfo={goats[goatName]} />
+                                    </Route>
+                                })
+                            }
+                        </Switch>
+                    </div>
                 </div>
             </HashRouter>
         </div>
