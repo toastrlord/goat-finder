@@ -27,8 +27,7 @@ class CheckoutItem extends Component {
             <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', margin: '8px'}}>
             <p style={{fontWeight: 'bold'}}>{itemName}</p>
                 <label htmlFor='quantity'>Quantity: </label>
-                <input style={{width: '50px'}} htmlFor='quantity' type='number' min='1' step='1' defaultValue={quantity} ref={this.quantityRef}
-                    onChange={(e) => this.quantityChanged(e.target.value)}
+                <input className='quantity-box' htmlFor='quantity' type='number' min='1' max='100' step='1' defaultValue={quantity} ref={this.quantityRef}
                     onKeyDown={(e) => {
                         if ((Number(e.key) >= 0 && Number(e.key) <= 9) || e.key === 'Backspace' || e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
                             return true;
@@ -36,6 +35,12 @@ class CheckoutItem extends Component {
                             e.preventDefault();
                             return false;
                         }
+                }}
+                onChange={(e) => {
+                    if (e.target.value > 100) {
+                        e.target.value = 100;
+                    }
+                    this.quantityChanged(e.target.value);
                 }}
                 />
                 <p>Subtotal: ${(quantity * price).toFixed(2)}</p>

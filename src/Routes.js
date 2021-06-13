@@ -15,28 +15,30 @@ const Routes = () => {
     return (
         <div id='main-display'>
             <HashRouter basename={process.env.PUBLIC_URL}>
-                <Link to='/shop'>
-                    <img src={process.env.PUBLIC_URL + '/images/goatfinder_logo_smaller.png'} alt='goat finder logo' className='logo'/>
-                </Link>
+                <div id='top-bar'>
+                    <Link to='/shop'>
+                        <img src={process.env.PUBLIC_URL + '/images/goatfinder_logo_smaller.png'} alt='goat finder logo' className='logo'/>
+                    </Link>
                     <NavBar />
-                    <div style={{display: 'flex', justifyContent: 'center', textAlign: 'center'}}>
-                        <Switch style={{flex: 4}}>
-                            <Route exact path='/'> 
-                                <Redirect to='/shop' />
-                            </Route>
-                            <Route exact path='/about' component={AboutPage} />
-                            <Route exact path='/shop' component={ShopPage} />
-                            <Route exact path='/checkout' component={CheckoutPage}/>
-                            {
-                                Object.keys(goats).map((goatName, index) => {
-                                    const goatLink = goatNameToLink(goatName);
-                                    return <Route exact path={goatLink} key={index}>
-                                        <ShopItem itemName={goatName} goatInfo={goats[goatName]} />
-                                    </Route>
-                                })
-                            }
-                        </Switch>
-                    </div>
+                </div>
+                <div id='page-content' style={{display: 'flex', justifyContent: 'center', textAlign: 'center'}}>
+                    <Switch style={{flex: 4}}>
+                        <Route exact path='/'> 
+                            <Redirect to='/shop' />
+                        </Route>
+                        <Route exact path='/about' component={AboutPage} />
+                        <Route exact path='/shop' component={ShopPage} />
+                        <Route exact path='/checkout' component={CheckoutPage}/>
+                        {
+                            Object.keys(goats).map((goatName, index) => {
+                                const goatLink = goatNameToLink(goatName);
+                                return <Route exact path={goatLink} key={index}>
+                                    <ShopItem itemName={goatName} goatInfo={goats[goatName]} />
+                                </Route>
+                            })
+                        }
+                    </Switch>
+                </div>
             </HashRouter>
         </div>
     );

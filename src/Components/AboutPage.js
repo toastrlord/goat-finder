@@ -5,7 +5,7 @@ class AboutPage extends Component {
     render() {
         return <div>
             <h1>About Us</h1>
-            <p style={{marginLeft: '15%', marginRight: '15%'}}>
+            <p style={{marginLeft: '10%', marginRight: '10%'}}>
                 At Goat Finder, our number one goal is to find the perfect goats for YOU! With affordable prices and the highest quality goats, anyone can become a proud goat owner today!
                 Don't just take our word for it, listen to our satisfied customers!
             </p>

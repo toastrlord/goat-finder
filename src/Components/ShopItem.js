@@ -14,7 +14,8 @@ class ShopItem extends Component {
             <img src={process.env.PUBLIC_URL + '/images/' + imageSource} alt={itemName} className='goat-image'/>
             <p>{description}</p>
             <p>Price: ${price}</p>
-            <input htmlFor='quantity' type='number' min='1' step='1' defaultValue='1' ref={this.quantityRef}
+            <label htmlFor='quantity'>Quantity:</label>
+            <input htmlFor='quantity' type='number' min='1' step='1' max='100' defaultValue='1' ref={this.quantityRef} className='quantity-box'
                 onKeyDown={(e) => {
                         if ((Number(e.key) >= 0 && Number(e.key) <= 9) || e.key === 'Backspace' || e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
                             return true;
@@ -22,6 +23,11 @@ class ShopItem extends Component {
                             e.preventDefault();
                             return false;
                         }
+                }}
+                onChange={(e) => {
+                    if (e.target.value > 100) {
+                        e.target.value = 100;
+                    }
                 }}
             />
             <button onClick={() => addItems({price, description, imageSource, name: itemName}, this.quantityRef.current.value)}>Add to Cart</button>
