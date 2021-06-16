@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/goat-finder/static/css/main.e560d9e0.chunk.css",
-    "main.js": "/goat-finder/static/js/main.8bc2849d.chunk.js",
-    "main.js.map": "/goat-finder/static/js/main.8bc2849d.chunk.js.map",
+    "main.js": "/goat-finder/static/js/main.349d5a3e.chunk.js",
+    "main.js.map": "/goat-finder/static/js/main.349d5a3e.chunk.js.map",
     "runtime-main.js": "/goat-finder/static/js/runtime-main.c713899d.js",
     "runtime-main.js.map": "/goat-finder/static/js/runtime-main.c713899d.js.map",
     "static/js/2.d5c2c5e6.chunk.js": "/goat-finder/static/js/2.d5c2c5e6.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.c713899d.js",
     "static/js/2.d5c2c5e6.chunk.js",
     "static/css/main.e560d9e0.chunk.css",
-    "static/js/main.8bc2849d.chunk.js"
+    "static/js/main.349d5a3e.chunk.js"
   ]
 }
